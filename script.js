@@ -316,5 +316,13 @@ function initTypingAnimation() {
     }
 }
 
+//Download CV functionality
+const downloadcv = document.getElementById('download-cv');
+downloadcv.addEventListener('click', () => {
+    const resumeUrl = '/src/Sandip_Yedage_Resume.pdf'; // Replace with the actual path to your resume file
+    window.open(resumeUrl, '_blank');
+});
+
+
 // Initialize typing animation after a short delay
 setTimeout(initTypingAnimation, 1000);

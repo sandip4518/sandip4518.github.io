@@ -408,6 +408,9 @@ nav {
   color: transparent;
   display: block;
   min-height: 60px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  will-change: contents;
 }
 
 .hero-content p {

@@ -11,12 +11,11 @@ setTheme(savedTheme);
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("theme-toggle").addEventListener("click", () => {
-    const currentTheme =
-      document.documentElement.getAttribute("data-theme");
+    const currentTheme = document.documentElement.getAttribute("data-theme");
     setTheme(currentTheme === "dark" ? "light" : "dark");
   });
 
-  initTypingEffect();        // ✅ looping typing
+  initTypingEffect(); // ✅ looping typing
   initNavigation();
   initProjectFilters();
   initContactForm();
@@ -28,11 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function initTypingEffect() {
   const h2 = document.querySelector(".hero-content h2");
 
-  const texts = [
-    "Data Analyst",
-    "Web Developer",
-    "BI Developer"
-  ];
+  const texts = ["Data Analyst", "Web Developer", "BI Developer"];
 
   let textIndex = 0;
   let charIndex = 0;
@@ -109,13 +104,28 @@ function initProjectFilters() {
   });
 }
 
+// ================= TOAST NOTIFICATION =================
+function showToast(message, type = "success", duration = 3000) {
+  const toast = document.createElement("div");
+  toast.className = `toast toast-${type}`;
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  setTimeout(() => toast.classList.add("show"), 10);
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 300);
+  }, duration);
+}
+
 // ================= CONTACT FORM =================
 function initContactForm() {
   const form = document.getElementById("contactForm");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    alert("Message sent successfully!");
+    showToast("Message sent successfully!", "success");
     form.reset();
   });
 }

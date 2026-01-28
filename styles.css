@@ -753,7 +753,7 @@ nav {
 }
 
 .project-item:hover {
-  transform: translateY(-15px) rotateX(5deg);
+  transform: translateY(-10px);
   box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2);
 }
 

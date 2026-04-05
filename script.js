@@ -174,6 +174,6 @@ function initSkillsAnimation() {
 
 // ================= DOWNLOAD CV =================
 document.getElementById("download-cv").addEventListener("click", () => {
-  window.open("/src/Sandip_Yedage_Resume.pdf", "_blank");
+  window.open("/src/Sandip-Yedage-Resume.pdf", "_blank");
 });
 // ================= END OF SCRIPT =================

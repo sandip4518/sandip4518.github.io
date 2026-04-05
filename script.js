@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initTypingEffect(); // ✅ looping typing
   initNavigation();
   initProjectFilters();
-  initContactForm();
   initScrollAnimation();
   initSkillsAnimation();
 });
@@ -119,16 +118,6 @@ function showToast(message, type = "success", duration = 3000) {
   }, duration);
 }
 
-// ================= CONTACT FORM =================
-function initContactForm() {
-  const form = document.getElementById("contactForm");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    showToast("Message sent successfully!", "success");
-    form.reset();
-  });
-}
 
 // ================= SCROLL ANIMATION =================
 function initScrollAnimation() {

@@ -473,7 +473,7 @@ nav {
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--card-shadow);
-  transform: perspective(1000px) rotateY(5deg);
+  transform: perspective(1000px) rotateY(0%);
   transition: transform 0.5s ease;
 }
 

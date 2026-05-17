@@ -477,9 +477,7 @@ nav {
   transition: transform 0.5s ease;
 }
 
-.about-image:hover {
-  transform: perspective(1000px) rotateY(0deg);
-}
+
 
 .about-image::before {
   content: "";

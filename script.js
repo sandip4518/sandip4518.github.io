@@ -75,14 +75,26 @@
   });
  
   /* === CONTACT FORM === */
-  document.getElementById('send-msg').addEventListener('click', () => {
-    const n = document.getElementById('cf-name').value.trim();
-    const e = document.getElementById('cf-email').value.trim();
-    const m = document.getElementById('cf-msg').value.trim();
-    if(!n||!e||!m){ showToast('Please fill in all fields.','error'); return; }
-    if(!/\S+@\S+\.\S+/.test(e)){ showToast('Please enter a valid email.','error'); return; }
-    showToast('Message sent! I\'ll get back to you soon. 🚀');
-    document.getElementById('cf-name').value='';
-    document.getElementById('cf-email').value='';
-    document.getElementById('cf-msg').value='';
+  const form = document.getElementById('contact-form');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('send-msg');
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  btn.disabled = true;
+
+  const res = await fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
   });
+
+  if (res.ok) {
+    showToast("Message sent! I'll get back to you soon. 🚀");
+    form.reset();
+  } else {
+    showToast('Something went wrong. Try emailing directly.', 'error');
+  }
+
+  btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+  btn.disabled = false;
+});

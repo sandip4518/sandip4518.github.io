@@ -328,6 +328,10 @@ nav {
   transform: translateY(-3px);
 }
 
+.hero-socials a[aria-label="X"] {
+  color: #f1f5f9;
+}
+
 /* ===== ABOUT ===== */
 #about {
   position: relative;
@@ -370,6 +374,16 @@ nav {
 .about-facts strong {
   color: var(--fg);
   font-weight: 600;
+}
+
+.about-facts a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.about-facts a:hover {
+  color: var(--orange);
 }
 
 .about-text h3 {
@@ -491,13 +505,6 @@ nav {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 14px;
-}
-
-.skill-group p {
-  color: var(--muted);
-  font-size: 0.86rem;
-  line-height: 1.6;
-  margin-top: 14px;
 }
 
 .skill-pills {
@@ -809,6 +816,10 @@ nav {
   color: var(--orange);
   box-shadow: var(--glow-sm);
   transform: translateY(-3px);
+}
+
+.contact-socials a[aria-label="X"] {
+  color: #f1f5f9;
 }
 
 .contact-right {

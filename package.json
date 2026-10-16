@@ -1,0 +1,9 @@
+{
+  "name": "sandip4518.github.io",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static portfolio site",
+  "engines": {
+    "node": "24.x"
+  }
+}
